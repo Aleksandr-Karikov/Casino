@@ -23,14 +23,14 @@
             <Label Margin="5" FontSize="17" HorizontalContentAlignment="Center">Сумма деозита</Label>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="0">
-            <TextBox Margin="10" FontSize="20" MinWidth="100" ></TextBox>
-            <TextBox Margin="10" FontSize="17" MinWidth="100"></TextBox>
-            <TextBox Margin="10,7,10,0" FontSize="17" MinWidth="100"></TextBox>
-            <TextBox Margin="10,20,10,10" FontSize="17" MinWidth="100"></TextBox>
+            <TextBox Text="{Binding Number}"  Margin="10" FontSize="20" MinWidth="100" ></TextBox>
+            <TextBox Text="{Binding Cvv}" Margin="10" FontSize="17" MinWidth="100"></TextBox>
+            <TextBox Text="{Binding Date}" Margin="10,7,10,0" FontSize="17" MinWidth="100"></TextBox>
+            <TextBox Text="{Binding Sum}" Margin="10,20,10,10" FontSize="17" MinWidth="100"></TextBox>
         </StackPanel>
         <StackPanel Grid.ColumnSpan="2" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Margin="10" Content="Выйти" FontSize="17" MinHeight="25"/>
-            <Button Command="{Binding CloseCommand}" Margin="10" Content="Пополнить" FontSize="17"  MinHeight="25"/>
+            <Button Command="{Binding CloseCommand}" Margin="10" Content="Выйти" FontSize="17" MinHeight="25"/>
+            <Button Margin="10" Command="{Binding DepositCommand}" Content="Пополнить" FontSize="17"  MinHeight="25"/>
         </StackPanel>
         
     </Grid>

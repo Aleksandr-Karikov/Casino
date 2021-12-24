@@ -29,13 +29,13 @@
                         <RowDefinition Height="0.4*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.8*"/>
-                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
                     </Grid.ColumnDefinitions>
-                    <Label FontSize="21" Grid.Row="0" Grid.Column="0">Баланс:</Label>
-                    <TextBlock FontSize="21" Grid.Column="1" Grid.Row="0" Text="{Binding Balance, Mode=TwoWay}"></TextBlock>
-                    <Label FontSize="21" Grid.Row="1" Grid.Column="0">Логин:</Label>
-                    <TextBlock FontSize="21" Grid.Column="1" Grid.Row="1" Text="{Binding Login, Mode=TwoWay}"></TextBlock>
+                    <Label HorizontalContentAlignment="Center"  FontSize="21" Grid.Row="0" Grid.Column="0">Баланс:</Label>
+                    <Label HorizontalContentAlignment="Center" FontSize="17" Grid.Column="1" Grid.Row="0" Content="{Binding Balance, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></Label>
+                    <Label HorizontalContentAlignment="Center" FontSize="21" Grid.Row="1" Grid.Column="0">Логин:</Label>
+                    <Label HorizontalContentAlignment="Center"  FontSize="21" Grid.Column="1" Grid.Row="1" Content="{Binding Login, Mode=TwoWay}"></Label>
                     <Button Margin="5" FontSize="14" Grid.Row="2" Grid.ColumnSpan="2" Command="{Binding ChangeUserCommand}">Сменить пользователя</Button>
                 </Grid>
             </Border>
@@ -44,19 +44,21 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0.2*"/>
                         <RowDefinition Height="0.2*"/>
-                        <RowDefinition Height="0.3*"/>
-                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="0.2*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.8*"/>
-                        <ColumnDefinition Width="0.2*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
                     </Grid.ColumnDefinitions>
-                    <Label FontSize="17" Grid.Row="0" Grid.Column="0">Сумма ставки:</Label>
-                    <TextBlock FontSize="27" Grid.Column="1" Grid.Row="0" Text="{Binding Bet, Mode=TwoWay}"></TextBlock>
+                    <Label FontSize="17" Grid.Row="0" Grid.Column="0">Ставка:</Label>
+                    <Label FontSize="17" Grid.Column="1" Grid.Row="0" Content="{Binding Bet, Mode=TwoWay}"></Label>
                     <Label FontSize="17" Grid.Row="1" Grid.Column="0">Выйгрыш:</Label>
-                    <TextBlock FontSize="17" Grid.Column="1" Grid.Row="1" Text="{Binding WinSumm, Mode=TwoWay}"></TextBlock>
+                    <Label FontSize="17" Grid.Column="1" Grid.Row="1" Content="{Binding WinSum, Mode=TwoWay}"></Label>
                     <Button Margin="5" FontSize="17" Grid.Row="2" Grid.ColumnSpan="2" Command="{Binding DepositCommand}">Депозит</Button>
                     <Button Margin="5" FontSize="17" Grid.Row="3" Grid.ColumnSpan="2" Command="{Binding WithdrawalCommand}">Вывести</Button>
+                    <Button Margin="5" FontSize="17" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding StartCommand}">Крутить</Button>
                 </Grid>
             </Border>     
             
@@ -68,7 +70,7 @@
                 <RowDefinition Height="0.4*"/>
             </Grid.RowDefinitions>
             <Border Margin="10" Grid.Row="0" BorderThickness="2" BorderBrush="Black">
-                <Label FontSize="20" VerticalAlignment="Center">Добро пожаловать в самое крупное и честное казино "SCAM PROJECT" </Label>
+                <Label FontSize="20" VerticalAlignment="Center">Добро пожаловать в самое честное казино "SCAM PROJECT" </Label>
             </Border>
             <Border Grid.Row="1" Margin="10" BorderBrush="Black" BorderThickness="2">
                 
@@ -78,9 +80,9 @@
                         <ColumnDefinition Width="0.33*"/>
                         <ColumnDefinition Width="0.33*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
-                    <Image Grid.Column="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
-                    <Image Grid.Column="2" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                    <Image Source="{Binding DisplayedSlot1Path , Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Column="0" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                    <Image Source="{Binding DisplayedSlot2Path , Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                    <Image Source="{Binding DisplayedSlot3Path , Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                 </Grid>
             </Border>
             <Border Margin="100,10,100,10" Grid.Row="2" BorderThickness="2" BorderBrush="Black">
@@ -99,10 +101,10 @@
                             <ColumnDefinition Width="0.25*"/>
                             <ColumnDefinition Width="0.25*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Margin="3" Grid.Column="0" Content="5 рублей" />
-                        <Button Margin="3" Grid.Column="1" Content="50 рублей"/>
-                        <Button Margin="3" Grid.Column="2" Content="500 рублей" />
-                        <Button Margin="3" Grid.Column="3" Content="5000 рублей"/>
+                        <Button Command="{Binding Set5Command}" Margin="3" Grid.Column="0" Content="5 рублей" />
+                        <Button Command="{Binding Set50Command}" Margin="3" Grid.Column="1" Content="50 рублей"/>
+                        <Button Command="{Binding Set500Command}" Margin="3" Grid.Column="2" Content="500 рублей" />
+                        <Button Command="{Binding Set5000Command}"  Margin="3" Grid.Column="3" Content="5000 рублей"/>
                     </Grid>
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
@@ -110,9 +112,9 @@
                             <ColumnDefinition Width="0.4*"/>
                             <ColumnDefinition Width="0.3*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Margin="2">Поставить</Button>
-                        <TextBox Grid.Column="1" FontSize="20" Margin="2"></TextBox>
-                        <Button Grid.Column="2" Margin="2">All in</Button>
+                        <Button Command="{Binding SetCommand}" Grid.Column="0" Margin="2">Поставить</Button>
+                        <TextBox Text="{Binding BetBox}" Grid.Column="1" FontSize="20" Margin="2"></TextBox>
+                        <Button Grid.Column="2" Margin="2" Command="{Binding SetAllInCommand}">All in</Button>
                     </Grid>
                     <Grid Grid.Row="3">
                         <Grid.ColumnDefinitions>
@@ -120,9 +122,9 @@
                             <ColumnDefinition Width="0.2*"/>
                             <ColumnDefinition Width="0.6*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Content="x2"/>
-                        <Button Grid.Column="1" Content="/2"/>
-                        <Button Grid.Column="2" Content="Отменить ставку"/>
+                        <Button Grid.Column="0" Command="{Binding SetX2Command}" Content="x2"/>
+                        <Button Grid.Column="1" Command="{Binding SetDevideCommand}" Content="/2"/>
+                        <Button Grid.Column="2" Command="{Binding CansleCommand}" Content="Отменить ставку"/>
                     </Grid>
                 </Grid>
             </Border>

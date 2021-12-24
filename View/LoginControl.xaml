@@ -14,8 +14,8 @@
             <ColumnDefinition Width="0.44*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" VerticalAlignment="Center">
-            <Label FontSize="20" Content="Логин" Margin="5"/>
-            <Label FontSize="20" Content="Пароль" Margin="5"/>
+            <Label HorizontalContentAlignment="Center" FontSize="20" Content="Логин" Margin="5"/>
+            <Label HorizontalContentAlignment="Center" FontSize="20" Content="Пароль" Margin="5"/>
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center">
             <TextBox FontSize="20" Text="{Binding Login,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10"/>

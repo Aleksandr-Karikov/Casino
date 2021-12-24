@@ -90,6 +90,8 @@ namespace Casino.ViewModel
                 MainVM.Title = "Казино";
                 MainVM.WindowHeight = 600;
                 MainVM.WindowWidth = 1050;
+                MainVM.CasinoVM.Login = MainVM.User.Login;
+                MainVM.CasinoVM.Balance = MainVM.User.Balance;
             }
             catch (Exception e)
             {

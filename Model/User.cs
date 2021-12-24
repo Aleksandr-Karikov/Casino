@@ -11,7 +11,7 @@ namespace Casino.Model
     {
         public string Login { get; set; }
         public int? Id { get; set; }
-        public Decimal? Balance { get; set; }
+        public int? Balance { get; set; }
         public async Task Register(string login,string password)
         {
             using (SqlConnection connection = new SqlConnection(QweryHelper.ConnectionString))
@@ -25,6 +25,7 @@ namespace Casino.Model
                 }
                 SqlCommand setUserCommand = new SqlCommand(QweryHelper.SetUserQwery(login,password), connection);
                 await setUserCommand.ExecuteNonQueryAsync();
+                
             }
         }
 
@@ -43,8 +44,28 @@ namespace Casino.Model
                 {
                     Id = reader.GetInt32(0);
                     Login = reader.GetString(1);
-                    Balance = reader.GetDecimal(2);
+                    Balance = reader.GetInt32(2);
                 }
+            }
+        }
+        public async Task AddBalance(int balance)
+        {
+            using (SqlConnection connection = new SqlConnection(QweryHelper.ConnectionString))
+            {
+                connection.Open();
+                SqlCommand SetBalance = new SqlCommand(QweryHelper.AddBalanceQwery(balance), connection);
+                await SetBalance.ExecuteNonQueryAsync();
+
+            }
+        }
+        public async Task SetBalance(int balance)
+        {
+            using (SqlConnection connection = new SqlConnection(QweryHelper.ConnectionString))
+            {
+                connection.Open();
+                SqlCommand SetBalance = new SqlCommand(QweryHelper.SetBalanceQwery(balance), connection);
+                await SetBalance.ExecuteNonQueryAsync();
+
             }
         }
         public async Task UpdateDatas()
@@ -66,7 +87,7 @@ namespace Casino.Model
                 {
                     Id = reader.GetInt32(0);
                     Login = reader.GetString(1);
-                    Balance = reader.GetDecimal(2);
+                    Balance = reader.GetInt32(2);
                 }
             }
         }

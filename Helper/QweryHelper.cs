@@ -24,5 +24,13 @@ namespace Casino.Helper
         {
             return $"Insert into [User] (Login,Password,Balance) Values ('{login}', '{password}',0)";
         }
+        public static string AddBalanceQwery(int balance)
+        {
+            return $"Update [User] Set Balance+={balance}";
+        }
+        public static string SetBalanceQwery(int balance)
+        {
+            return $"Update [User] Set Balance={balance}";
+        }
     }
 }

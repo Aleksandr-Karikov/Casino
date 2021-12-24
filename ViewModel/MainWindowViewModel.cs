@@ -10,14 +10,14 @@ namespace Casino.ViewModel
     {
         public MainWindowViewModel()
         {
-            WindowHeight = 600;
-            WindowWidth = 1050;
+            WindowHeight = 200;
+            WindowWidth = 500;
             LoginVM = new LoginViewModel(this);
             CasinoVM = new CasinoViewModel(this);
             DepositVM = new DepositViewModel(this);
             WithdrawalVM = new WithdrawalViewModel(this);
             User = new User();
-            CurentView = CasinoVM;
+            CurentView = LoginVM;
 
             
             Title = "Вход";
