@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Casino.View.LoginControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Casino.View"
+             mc:Ignorable="d" 
+            Background="AntiqueWhite"
+            >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.23*"/>
+            <ColumnDefinition Width="0.33*"/>
+            <ColumnDefinition Width="0.44*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+            <Label FontSize="20" Content="Логин" Margin="5"/>
+            <Label FontSize="20" Content="Пароль" Margin="5"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBox FontSize="20" Text="{Binding Login,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10"/>
+            <TextBox FontSize="20" Text ="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="10"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+            <Button Command="{Binding LoginCommand}" FontSize="20" Margin="10" Content="Войти"/>
+            <Button Command="{Binding RegisterCommand}" FontSize="18" Margin="10" Content="Зарегестрироваться"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

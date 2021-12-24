@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Casino.Commands.BaseCommands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WorkControllerAdmin.Commands.BaseCommands;
 
-namespace WorkControllerAdmin.Commands
+namespace Casino.Commands
 {
     internal class LamdaCommand : BaseCommand
     {

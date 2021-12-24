@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace WorkControllerAdmin.Commands.BaseCommands
+namespace Casino.Commands.BaseCommands
 {
     internal abstract class BaseCommand : ICommand
     {

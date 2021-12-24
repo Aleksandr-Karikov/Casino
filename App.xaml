@@ -2,8 +2,21 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Casino"
+             xmlns:viewModel="clr-namespace:Casino.ViewModel"
+             xmlns:view="clr-namespace:Casino.View"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+            <view:LoginControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:CasinoViewModel}">
+            <view:CasinoControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:DepositViewModel}">
+            <view:DepositControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:WithdrawalViewModel}">
+            <view:WithdrawalControl/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

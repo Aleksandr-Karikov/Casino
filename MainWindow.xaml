@@ -1,12 +1,17 @@
 ﻿<Window x:Class="Casino.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Casino"
+        xmlns:viewModels="clr-namespace:Casino.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="{Binding Title}" Height="{Binding WindowHeight,Mode=TwoWay}" Width="{Binding WindowWidth,Mode=TwoWay}"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel/>
+    </Window.DataContext>
+    <ContentControl
+         
+                Content="{Binding CurentView}"
+        />
 </Window>
